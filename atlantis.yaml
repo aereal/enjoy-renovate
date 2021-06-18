@@ -1,0 +1,5 @@
+version: 3
+projects:
+  - name: my-app-live
+    dir: terraform/live
+    terraform_version: v0.13.5
