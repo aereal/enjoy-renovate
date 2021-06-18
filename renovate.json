@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "^atlantis[.]ya?ml$"
+      ],
+      "matchStrings": [
+        "terraform_version:\\s*(?<currentValue>.*?)$"
+      ],
+      "depNameTemplate": "hashicorp/terraform",
+      "datasourceTemplate": "github-releases"
+    }
+  ]
+}
