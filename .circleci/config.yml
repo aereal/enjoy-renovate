@@ -1,0 +1,31 @@
+version: 2.1
+executors:
+  default:
+    docker:
+      - image: cimg/base:stable
+commands:
+  install_ecspresso:
+    parameters:
+      ecspresso_version:
+        description: ecspresso version
+        type: string
+    steps:
+      - run:
+          name: Install ecspresso
+          command: |
+            FILENAME=ecspresso-<< parameters.ecspresso_version >>-linux-amd64
+            cd /tmp
+            curl -sLO https://github.com/kayac/ecspresso/releases/download/<< parameters.ecspresso_version >>/${FILENAME}.zip
+            unzip ${FILENAME}.zip
+            sudo install ${FILENAME} /usr/local/bin/ecspresso
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy
+jobs:
+  deploy:
+    executor: default
+    steps:
+      - install_ecspresso:
+          ecspresso_version: v1.2.1
