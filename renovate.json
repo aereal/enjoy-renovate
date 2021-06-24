@@ -5,6 +5,16 @@
   "regexManagers": [
     {
       "fileMatch": [
+        "^[.]circleci/config[.]ya?ml$"
+      ],
+      "matchStrings": [
+        "ecspresso_version:\\s*(?<currentValue>.*?)\n"
+      ],
+      "depNameTemplate": "kayac/ecspresso",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": [
         "^atlantis[.]ya?ml$"
       ],
       "matchStrings": [
