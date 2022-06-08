@@ -22,6 +22,17 @@
       ],
       "depNameTemplate": "hashicorp/terraform",
       "datasourceTemplate": "github-releases"
+    },
+    {
+      "fileMatch": [
+        "^\\.github/.*\\.ya?ml$"
+      ],
+      "matchStrings": [
+        "\\bgo-version:\\s*['\"]?(?<currentValue>[0-9.x]+)['\"]?"
+      ],
+      "extractVersionTemplate": "go(?<version>.*)$",
+      "depNameTemplate": "golang/go",
+      "datasourceTemplate": "github-tags"
     }
   ]
 }
