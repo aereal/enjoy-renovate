@@ -28,7 +28,7 @@
         "^\\.github/.*\\.ya?ml$"
       ],
       "matchStrings": [
-        "go-version:\\s*['\"]?(?<currentValue>[0-9]+[.][0-9]+(?:[.][0-9]+))['\"]?\n"
+        "go-version:\\s*['\"]?(?<currentValue>[0-9]+[.][0-9]+(?:[.][0-9]+)?)['\"]?\n"
       ],
       "extractVersionTemplate": "go(?<version>.*)$",
       "depNameTemplate": "golang/go",
