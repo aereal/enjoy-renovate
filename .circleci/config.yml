@@ -28,4 +28,4 @@ jobs:
     executor: default
     steps:
       - install_ecspresso:
-          ecspresso_version: v1.7.11
+          ecspresso_version: v2.4.2
